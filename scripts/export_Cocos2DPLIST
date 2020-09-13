@@ -1,0 +1,17 @@
+#python
+
+import lx
+import plistlib
+import modoutil
+import sys
+
+scenedir = lx.eval("query sceneservice scene.file ? current")
+if not scenedir:
+    modoutil.error("Bad file","Save file before exporting")
+    
+scenename = lx.eval("query sceneservice scene.name ? current")
+scenedir = scenedir[:-len(scenename)]
+layer_name = lx.eval("query layerservice layer.name ? main")
+
+itemtype  = lx.eval("query sceneservice item.type ? selected")
+lx.out (itemtype)

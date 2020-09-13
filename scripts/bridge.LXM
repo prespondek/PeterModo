@@ -1,0 +1,5 @@
+#LXMacro#
+tool.set edge.bridge on
+tool.setAttr edge.bridge segments 1
+tool.doApply
+tool.set edge.bridge off

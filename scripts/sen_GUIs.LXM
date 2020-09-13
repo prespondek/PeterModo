@@ -1,0 +1,4 @@
+#LXMacro#
+layout.create width:600 height:800 class:normal
+viewport.restore newType:attrform
+attr.viewExport {senemodokit:sheet} set

@@ -1,0 +1,21 @@
+#LXMacro#
+select.editSet senetempBarycentric add
+select.connect
+select.editSet senetempBarycentricTemp add
+
+select.drop polygon
+select.useSet senetempBarycentric select
+
+@select_boundaryEdge.py
+@super_uvTools.pl peeler
+@align_uvToAxis.py
+@super_UVTools.pl U scaleToPixelSize
+@super_UVTools.pl Y uvHotSpotTool
+
+select.useSet senetempBarycentricTemp select
+select.editSet senetempBarycentricTemp remove
+vert.merge auto
+
+select.drop polygon
+select.useSet senetempBarycentric select
+select.editSet senetempBarycentric remove
